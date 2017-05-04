@@ -23,4 +23,8 @@ public class DataProducer {
 		return result;
 
 	}
+	
+	public static Product getFirstTestProduct(){
+		return getTestData(10).get(0).getBoughtProducts().get(0);
+	}
 }

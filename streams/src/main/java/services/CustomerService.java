@@ -27,19 +27,19 @@ public class CustomerService implements CustomerServiceInterface {
 	@Override
 	public List<Customer> findByField(String fieldName, Object value) {
 		// TODO:
-		Function<String, Field> f =
-			    (String c) -> {
-			        try {
-			           return Customer.class.getField(fieldName);
-			        }
-			        catch(Exception e) {
-			        	return null;
-			        }
-			    };
-		
-			return customers.stream()
-					.filter(c -> f == value)
-					.collect(Collectors.toList());
+				Function<String, Field> f =
+					    (String c) -> {
+					        try {
+					           return Customer.class.getField(fieldName);
+					        }
+					        catch(Exception e) {
+					        	return null;
+					        }
+					    };
+				
+					return customers.stream()
+							.filter(c -> f == value)
+		.collect(Collectors.toList());
 	}
 
 	@Override
@@ -54,6 +54,7 @@ public class CustomerService implements CustomerServiceInterface {
 
 	@Override
 	public List<Customer> customersWhoSpentMoreThan(double price) {
+		// TODO Auto-generated method stub
 		//List <Product> prod = customers.stream().map(c -> c.getBoughtProducts()).map(pl -> pl.forEach(p ->  (p.getPrice())));
 		return null;
 	}
@@ -68,13 +69,13 @@ public class CustomerService implements CustomerServiceInterface {
 	@Override
 	public void addProductToAllCustomers(Product p) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public double avgOrders(boolean includeEmpty) {
-		// TODO Auto-generated method stub
-		return 0;
+		List<Product> allProducts = customers.stream().flatMap(c -> c.getBoughtProducts().stream()).collect(Collectors.toList());
+		return allProducts.stream().map(Product::getPrice).collect(Collectors.toList())
+							.stream().mapToDouble(i->i.doubleValue()).sum()/customers.size();
 	}
 
 	@Override
@@ -105,7 +106,6 @@ public class CustomerService implements CustomerServiceInterface {
 	public int countCustomersWhoBought(Product p) {
 		List<List<Product>> llp = customers.stream()
 				.map(c -> c.getBoughtProducts())
-				
 				.collect(Collectors.toList());
 		return llp.size();
 	}
