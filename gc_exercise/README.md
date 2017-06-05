@@ -1,3 +1,7 @@
+#JVM 3,4 - GC Performance
+
+Uruchomienie: sh runner.sh
+
 Runtime environment:
 Processor: Intel Core i3-4130 @ 3.40GHz
 Installed RAM: 8,00 GB
