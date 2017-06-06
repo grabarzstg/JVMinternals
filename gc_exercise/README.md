@@ -1,4 +1,4 @@
-#JVM 3,4 - GC Performance
+# JVM 3,4 - GC Performance
 
 Uruchomienie: **sh runner.sh**
 

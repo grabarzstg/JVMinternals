@@ -1,4 +1,5 @@
-#JVM 1 - OutOfMemoryError
+# JVM 1 - OutOfMemoryError
+
 Napisać dowolny program, który zobrazuje zjawisko przepełnienia sterty Java (Java heap)
 
 • Program powinien kończyć swoje działanie wyjątkiem OutOfMemoryError

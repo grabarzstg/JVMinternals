@@ -2,4 +2,6 @@ Przygotowanie przykładu ukazującego, że klasa SimpleDateFormat **nie jest** T
 
 Poprawienie kodu w taki sposób, aby wywołanie metody *.parse()* klasy SimpleDateFormat działało poprawnie przy wykorzystaniu wielu wątków jednocześnie.
 
+Uruchomienie: **mvn package exec:java**
+
 
